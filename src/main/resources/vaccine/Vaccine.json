@@ -1,0 +1,192 @@
+{
+  "models": [
+    {
+      "edges": [
+        {
+          "id": "c0173af9-dae4-4ab6-922a-df704f294d0b",
+          "name": "e_NewVaccine",
+          "sourceVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5",
+          "targetVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "actions": [
+            "vaccines=vaccines+1"
+          ]
+        },
+        {
+          "id": "9de906b3-0a2a-4cd3-b06b-19aad30e2fc8",
+          "name": "e_DeleteVaccineException",
+          "sourceVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5",
+          "targetVertexId": "6509aeb2-9bdd-490b-9e0a-b226e60e857e"
+        },
+        {
+          "id": "3aa44b9c-d543-416a-89f9-2daadb07ef45",
+          "name": "e_NewVaccine",
+          "sourceVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "targetVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "actions": [
+            "vaccines=vaccines+1"
+          ]
+        },
+        {
+          "id": "f66caa8e-7ad7-43b5-835e-efa37cfcb3b5",
+          "name": "e_DeleteVaccine",
+          "sourceVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "targetVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "guard": "vaccines>1",
+          "actions": [
+            "vaccines=vaccines-1"
+          ]
+        },
+        {
+          "id": "932f476d-7683-4872-84ea-d6ed00343996",
+          "name": "e_DeleteVaccine",
+          "sourceVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "targetVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5",
+          "guard": "vaccines==1",
+          "actions": [
+            "vaccines=0"
+          ]
+        },
+        {
+          "id": "41aa020c-ae9d-46c6-b5c3-f71283592fe7",
+          "name": "e_NewVaccineException",
+          "sourceVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "targetVertexId": "6509aeb2-9bdd-490b-9e0a-b226e60e857e"
+        },
+        {
+          "id": "4addd033-ffb8-4a4d-97f1-8347e3f1e2bf",
+          "name": "e_DeleteVaccineException",
+          "sourceVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "targetVertexId": "6509aeb2-9bdd-490b-9e0a-b226e60e857e"
+        },
+        {
+          "id": "0e3bcaa1-4dc4-45cc-9d0b-7a72dae287d8",
+          "name": "e_NewVaccineException",
+          "sourceVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5",
+          "targetVertexId": "6509aeb2-9bdd-490b-9e0a-b226e60e857e"
+        },
+        {
+          "id": "f50bb217-ec4c-4495-9213-cf3344dbb5a9",
+          "name": "e_UpdateVaccineException",
+          "sourceVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5",
+          "targetVertexId": "6509aeb2-9bdd-490b-9e0a-b226e60e857e"
+        },
+        {
+          "id": "aa3eab86-91e2-4662-b94d-9910237fa761",
+          "name": "e_UpdateVaccine",
+          "sourceVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "targetVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73"
+        },
+        {
+          "id": "50a3d853-dee5-4cce-9e3d-9fa3a03cb71a",
+          "name": "e_UpdateVaccineException",
+          "sourceVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "targetVertexId": "6509aeb2-9bdd-490b-9e0a-b226e60e857e"
+        },
+        {
+          "id": "d8ec04ff-b045-4dfd-8518-24e467242927",
+          "name": "e_GetVaccine",
+          "sourceVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5",
+          "targetVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5"
+        },
+        {
+          "id": "08ef00a8-7035-4da7-992a-f881ac79e1c7",
+          "name": "e_GetVaccine",
+          "sourceVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "targetVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73"
+        },
+        {
+          "id": "094a2e1f-a370-496d-8b77-c92599dc7989",
+          "name": "e_IsCodePresent",
+          "sourceVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5",
+          "targetVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5"
+        },
+        {
+          "id": "1530a1ba-4223-4da2-9634-d5b8c39b43b8",
+          "name": "e_IsCodePresent",
+          "sourceVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "targetVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73"
+        },
+        {
+          "id": "4be02162-dd41-45cb-a293-839c0776a113",
+          "name": "e_IsCodePresentException",
+          "sourceVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5",
+          "targetVertexId": "6509aeb2-9bdd-490b-9e0a-b226e60e857e"
+        },
+        {
+          "id": "3a28cc34-0b23-4bc7-a99c-c4f26a1c54b9",
+          "name": "e_IsCodePresentException",
+          "sourceVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "targetVertexId": "6509aeb2-9bdd-490b-9e0a-b226e60e857e"
+        },
+        {
+          "id": "b83fc265-e53c-4f75-8985-1b996315a8bc",
+          "name": "e_FindVaccine",
+          "sourceVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5",
+          "targetVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5"
+        },
+        {
+          "id": "d4758dde-5202-48e6-89e3-fe6b4106a1a4",
+          "name": "e_FindVaccine",
+          "sourceVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "targetVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73"
+        },
+        {
+          "id": "8c0d977d-be35-4c17-8996-38989a61b7c2",
+          "name": "e_FindVaccineException",
+          "sourceVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5",
+          "targetVertexId": "6509aeb2-9bdd-490b-9e0a-b226e60e857e"
+        },
+        {
+          "id": "c5b3ea52-f6ed-4ee8-b5ce-bee0d38f8a69",
+          "name": "e_FindVaccineException",
+          "sourceVertexId": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "targetVertexId": "6509aeb2-9bdd-490b-9e0a-b226e60e857e"
+        },
+        {
+          "id": "ef2241ae-48ca-46d6-8f19-0d48efbfa54f",
+          "name": "e_Reset",
+          "sourceVertexId": "6509aeb2-9bdd-490b-9e0a-b226e60e857e",
+          "targetVertexId": "ac8887f2-d0bf-4195-85df-7882d5be08e5"
+        }
+      ],
+      "generator": "random(edge_coverage(100))",
+      "id": "e4cd90f8-5f9a-4380-8e69-221f8d7c9155",
+      "name": "Vaccine",
+      "startElementId": "ac8887f2-d0bf-4195-85df-7882d5be08e5",
+      "vertices": [
+        {
+          "id": "6509aeb2-9bdd-490b-9e0a-b226e60e857e",
+          "name": "v_OHException",
+          "properties": {
+            "x": 505.40060296491095,
+            "y": 277.3359761439058
+          }
+        },
+        {
+          "id": "ac8887f2-d0bf-4195-85df-7882d5be08e5",
+          "name": "v_NoVaccines",
+          "properties": {
+            "x": -144.28113989989697,
+            "y": 271.7599522023071
+          },
+          "actions": [
+            "vaccines=0"
+          ]
+        },
+        {
+          "id": "cd7c6ae9-46dd-40ad-81bb-0ca1f3fa5d73",
+          "name": "v_Vaccines",
+          "properties": {
+            "x": 192.2315038763429,
+            "y": -41.620746357989795
+          }
+        }
+      ],
+      "actions": [
+        "vaccines=0"
+      ]
+    }
+  ],
+  "selectedModelIndex": 0,
+  "selectedElementId": "932f476d-7683-4872-84ea-d6ed00343996"
+}

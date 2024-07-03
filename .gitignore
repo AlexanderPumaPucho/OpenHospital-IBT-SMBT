@@ -1,6 +1,7 @@
 .classpath
 .project
 .settings
+.evosuite
 bin
 logs
 /target/

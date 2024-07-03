@@ -28,6 +28,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jasperreports.version>6.21.3</jasperreports.version>
 		<license.maven.plugin.version>4.5</license.maven.plugin.version>
+		<graphwalker.version>4.3.2</graphwalker.version>
+		<evosuiteVersion>1.0.6</evosuiteVersion>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -197,10 +201,101 @@
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.graphwalker</groupId>
+			<artifactId>graphwalker-core</artifactId>
+			<version>${graphwalker.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.graphwalker</groupId>
+			<artifactId>graphwalker-java</artifactId>
+			<version>${graphwalker.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.graphwalker</groupId>
+			<artifactId>graphwalker-maven-plugin</artifactId>
+			<version>${graphwalker.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j2-impl</artifactId>
+			<version>2.23.1</version> <!-- Use the appropriate version -->
+		</dependency>
+		<dependency>
+			<groupId>org.evosuite</groupId>
+			<artifactId>evosuite-standalone-runtime</artifactId>
+			<version>${evosuiteVersion}</version>
+			<scope>test</scope>
+
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.antlr</groupId>-->
+<!--			<artifactId>antlr4</artifactId>-->
+<!--			<version>4.9.3</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.antlr</groupId>-->
+<!--			<artifactId>antlr4-runtime</artifactId>-->
+<!--			<version>4.13.0</version>-->
+<!--		</dependency>-->
 	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.pitest</groupId>
+				<artifactId>pitest-maven</artifactId>
+				<version>1.16.1</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.pitest</groupId>
+						<artifactId>pitest-junit5-plugin</artifactId>
+						<version>1.2.1</version>
+					</dependency>
+					
+				</dependencies>
+				<configuration>
+					<targetClasses>
+						<param>org.isf.vaccine.manager.VaccineBrowserManager</param> 
+					</targetClasses>
+					<targetTests>
+						<param>org.isf.vaccine.manager.VaccineInterfaceTest</param> 
+					</targetTests>
+					<outputFormats>
+						<param>HTML</param>
+					</outputFormats>
+				</configuration>
+			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.13.0</version>
@@ -336,6 +431,31 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.graphwalker</groupId>
+				<artifactId>graphwalker-maven-plugin</artifactId>
+				<version>${graphwalker.version}</version>
+	
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate-sources</goal>
+						</goals>
+					</execution>
+
+					<execution>
+						<id>generate-test-sources</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>generate-test-sources</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 
